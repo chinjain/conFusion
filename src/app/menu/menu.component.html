@@ -1,14 +1,25 @@
-<div class="container" fxlayout="column" fxlayoutGap="10px">
-    <mat-list fxFlex>
-        <mat-list-item *ngFor="let dish of dishes" >
-            <img src={{dish.image}} alt={{dish.image}}>
-            <h1 matline>{{dish.name}}</h1>
-            <p matline>
-                <span>
-                    {{dish.description}}
-                </span>
-            </p>
-        </mat-list-item>
-    </mat-list>
+<div class="container" fxLayout="column" fxLayoutGap="10px" >
+   <!-- Menu Bar -->
+    <div fxFlex>
+        <div>
+            <h3>Menu</h3>
+            <hr>
+        </div>
+    </div>
+<!-- Image price description of Dishes -->
+    <div fxFlex>
+        <mat-grid-list cols="2" rowHeight="200px">
+            <mat-grid-tile *ngFor="let dish of dishes">
+                <!-- <div class="circletag"> -->
+                    <img height="200px" src={{dish.image}} alt={{dish.image}}>
+                <!-- </div> -->
+               <mat-grid-tile-footer>
+                <h1 >{{dish.name | uppercase}}:</h1>
+                <!-- <p ><span>{{dish.description | lowercase}}</span></p> -->
+               </mat-grid-tile-footer>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+   <app-dishdetail></app-dishdetail>
 
 </div>
