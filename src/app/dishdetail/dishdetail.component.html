@@ -6,12 +6,12 @@
             <mat-card>
                 <mat-card-header>
                     <mat-card-title>
-                        <h3>{{dish.name|uppercase}}</h3>
+                        <h3>{{dish.name | uppercase}}</h3>
                     </mat-card-title>
                 </mat-card-header>
-                <img mat-card-image height="200px" widh src="{{dish.image}}" alt="{{dish.image}}">
+                <img mat-card-image widh src="{{dish.image}}" alt="{{dish.image}}">
                 <mat-card-content>
-                    {{dish.description}}
+                    <p> {{dish.description}} </p>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-button>LIKE</button>
@@ -20,28 +20,22 @@
             </mat-card>
         </div>
     </div>
-    <div fxFlex="40px" *ngIf="dish">
-        <h3>Comments</h3>
-        <mat-list>
-            <mat-list-item *ngFor="let comment of dish.comments">
-                <p mat-line>
-                    <span>
-                        {{comment.comment}}
-                    </span>
-                </p>
-                <p mat-line>
-                    <span>
-                        {{comment.rating}}
-                    </span>
-                </p>
-                <p mat-line>
-                    <span>
-                       --{{comment.author}} {{comment.date | date}}
-                    </span>
-                </p>
-            </mat-list-item>
-        </mat-list>
+    <div fxFlex="40px">
+        <div fxFlex *ngIf="dish">
+            <h3>Comments</h3>
+            <mat-list>
+                <mat-list-item *ngFor="let comment of dish.comments">
+                    <p mat-line>
+                        <span>{{comment.comment}}</span>
+                    </p>
+                    <p mat-line>
+                        <span>{{comment.rating}} Stars</span>
+                    </p>
+                    <p mat-line>
+                        <span>--{{comment.author}} {{comment.date | date}}</span>
+                    </p>
+                </mat-list-item>
+            </mat-list>
+        </div>
     </div>
-
-
 </div>
