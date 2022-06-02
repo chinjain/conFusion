@@ -1,14 +1,15 @@
+<!--  -->
 <div class="container"
     fxLayout="row"
     fxLayout.sm="column"
     fxLayout.xs="column"
-    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutAlign.gt-md="space-evenly center" 
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
 
     <div fxFlex="50px">
         <div fxFlex *ngIf="dish">
-            <mat-card>
+            <mat-card> 
                 <mat-card-header>
                     <mat-card-title>
                         <h3>{{dish.name | uppercase}}</h3>
@@ -25,7 +26,7 @@
             </mat-card>
         </div>
     </div>
-    <div fxFlex="40px">
+    <div fxFlex="50px">
         <div fxFlex *ngIf="dish">
             <mat-card>
                 <mat-card-header>
