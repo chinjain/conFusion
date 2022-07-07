@@ -12,4 +12,16 @@ export class PromotionService {
   getPromotions():Promotion[]{
     return PROMOTIONS;
   }
+
+  getPromotionById(id:string):Promotion{
+    return PROMOTIONS.filter(prom =>{
+      prom.id === id
+    })[0];
+  }
+
+  getFeaturedPromotion():Promotion{
+    return PROMOTIONS.filter(promo=>{
+      promo.featured
+    })[0];
+  }
 }

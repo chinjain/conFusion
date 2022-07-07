@@ -9,7 +9,7 @@
     <!-- Image price description of Dishes -->
     <div fxFlex>
         <mat-grid-list cols="2" rowHeight="200px"> 
-            <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">
+            <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]">
                 <!-- <div class="circletag"> -->
                 <img height="200px" src={{dish.image}} alt={{dish.image}}>
                 <!-- </div> -->
@@ -19,7 +19,8 @@
                 </mat-grid-tile-footer>
             </mat-grid-tile>
         </mat-grid-list>
-        <app-dishdetail [dish]="selectedDish"></app-dishdetail>
+
+        <!-- <app-dishdetail [dish]="selectedDish"></app-dishdetail> -->
     </div>
 </div>
 
